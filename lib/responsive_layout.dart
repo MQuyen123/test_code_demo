@@ -16,8 +16,11 @@ class ResponsiveLayout extends StatelessWidget {
             body: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: const BoxDecoration(
-                gradient: AppColors.bgGradient,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/Dinh_doc_lap.webp'),
+                  fit: BoxFit.cover,
+                ),
               ),
               child: const Center(
                 child: MobileContainer(),

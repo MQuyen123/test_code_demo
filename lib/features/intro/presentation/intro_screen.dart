@@ -23,10 +23,10 @@ class IntroScreen extends StatelessWidget {
                     const Text(
                       'GUIDE APP VIETNAM',
                       style: TextStyle(
-                        color: AppColors.gold,
+                        color: AppColors.primary,
                         fontSize: 12,
                         letterSpacing: 2,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     GestureDetector(
@@ -112,9 +112,15 @@ class IntroScreen extends StatelessWidget {
                   margin: const EdgeInsets.all(16),
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.08),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,9 +137,9 @@ class IntroScreen extends StatelessWidget {
                           const Text(
                             'Giới thiệu',
                             style: TextStyle(
-                              color: AppColors.gold,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
+                              color: AppColors.primaryDark,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                         ],
@@ -143,9 +149,9 @@ class IntroScreen extends StatelessWidget {
                         child: Text(
                           'Dinh Độc Lập (1962–1966) là biểu tượng lịch sử của Việt Nam, được kiến trúc sư Ngô Viết Thụ thiết kế. Nơi đây ghi dấu những sự kiện quan trọng nhất của lịch sử đất nước từ 1955–1975.\n\nHãy bắt đầu hành trình khám phá cùng chúng tôi!',
                           style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            height: 1.6,
+                            color: AppColors.textSecondary,
+                            fontSize: 13,
+                            height: 1.5,
                           ),
                         ),
                       ),

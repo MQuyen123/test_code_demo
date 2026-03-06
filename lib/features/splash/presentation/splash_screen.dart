@@ -126,7 +126,7 @@ class _SplashScreenState extends State<SplashScreen>
                       const Text(
                         'VIETNAM',
                         style: TextStyle(
-                          color: AppColors.textLight,
+                          color: AppColors.primary,
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
                           letterSpacing: 6,
@@ -154,7 +154,7 @@ class _SplashScreenState extends State<SplashScreen>
                       const Text(
                         'Dinh Độc Lập',
                         style: TextStyle(
-                          color: AppColors.textLight,
+                          color: AppColors.primaryDark,
                           fontSize: 13,
                           fontStyle: FontStyle.italic,
                           letterSpacing: 1,
@@ -163,7 +163,7 @@ class _SplashScreenState extends State<SplashScreen>
                       const Text(
                         'Independence Palace · Ho Chi Minh City',
                         style: TextStyle(
-                          color: Colors.white38,
+                          color: Colors.black54,
                           fontSize: 10,
                           letterSpacing: 0.5,
                         ),

@@ -19,7 +19,7 @@ class AppColors {
     end: Alignment.bottomRight,
   );
   static const LinearGradient bgGradient = LinearGradient(
-    colors: [Color(0xFF3D0505), Color(0xFF6B0F0F), Color(0xFF3D0505)],
+    colors: [Color(0xFFFFFFFF), Color(0xFFF9F6F0), Color(0xFFFFFFFF)],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
