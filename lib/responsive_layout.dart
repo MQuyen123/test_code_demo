@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_code/mobile_container.dart';
-import 'core/theme/app_colors.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({super.key});
