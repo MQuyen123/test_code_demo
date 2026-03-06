@@ -9,6 +9,8 @@ class ExhibitEntity extends Equatable {
   final double markerX;
   final double markerY;
   final String category; // 'room', 'garden', etc.
+  final bool isRoom;
+  final String? audioUrl; // Đường dẫn file nhạc mp3
 
   const ExhibitEntity({
     required this.id,
@@ -19,6 +21,8 @@ class ExhibitEntity extends Equatable {
     required this.markerX,
     required this.markerY,
     required this.category,
+    this.isRoom = false,
+    this.audioUrl,
   });
 
   @override
@@ -31,5 +35,7 @@ class ExhibitEntity extends Equatable {
         markerX,
         markerY,
         category,
+        isRoom,
+        audioUrl,
       ];
 }

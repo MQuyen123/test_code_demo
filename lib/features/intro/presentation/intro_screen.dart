@@ -165,7 +165,7 @@ class IntroScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Navigator.of(context)
-                        .pushReplacementNamed(AppRouter.home),
+                        .pushReplacementNamed(AppRouter.main),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.gold,
                       foregroundColor: AppColors.primaryDark,

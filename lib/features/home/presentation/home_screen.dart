@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/di/service_locator.dart';
 import '../../../core/router/app_router.dart';
-import '../domain/entities/exhibit_entity.dart';
 import '../../intro/presentation/widgets/language_picker_widget.dart';
+import '../domain/entities/exhibit_entity.dart';
 import 'cubit/home_cubit.dart';
 import 'cubit/home_state.dart';
 
@@ -28,19 +28,11 @@ class _HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.surface,
       appBar: AppBar(
-        title: const Text('KHÁM PHÁ'),
-        leading: IconButton(
-          icon: const Icon(Icons.qr_code_scanner_rounded),
-          onPressed: () => Navigator.pushNamed(context, AppRouter.pinEntry),
-        ),
+        title: const Text('DANH SÁCH PHÒNG'),
         actions: [
           IconButton(
             icon: const Icon(Icons.language_rounded),
             onPressed: () => LanguagePickerWidget.show(context),
-          ),
-          IconButton(
-            icon: const Icon(Icons.map_rounded),
-            onPressed: () => Navigator.pushNamed(context, AppRouter.map),
           ),
         ],
       ),
@@ -146,13 +138,17 @@ class _ExhibitCard extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withValues(alpha: 0.8),
+                        color: exhibit.isRoom
+                            ? AppColors.primary.withValues(alpha: 0.8)
+                            : AppColors.gold.withValues(alpha: 0.9),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
                         exhibit.pinCode,
-                        style: const TextStyle(
-                          color: AppColors.textLight,
+                        style: TextStyle(
+                          color: exhibit.isRoom
+                              ? AppColors.textLight
+                              : AppColors.primaryDark,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         ),

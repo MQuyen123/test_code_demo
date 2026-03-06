@@ -4,6 +4,7 @@ import '../../home/domain/entities/floor_entity.dart';
 import '../../home/domain/entities/exhibit_entity.dart';
 import '../../../../core/di/service_locator.dart';
 import '../../../../core/router/app_router.dart';
+import '../../intro/presentation/widgets/language_picker_widget.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -14,7 +15,6 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   late List<FloorEntity> _floors;
-  int _selectedFloorIndex = 0;
 
   @override
   void initState() {
@@ -28,99 +28,90 @@ class _MapScreenState extends State<MapScreen> {
       return const Scaffold(body: Center(child: Text('No map data available')));
     }
 
-    final currentFloor = _floors[_selectedFloorIndex];
-
-    return Scaffold(
-      backgroundColor: AppColors.surface,
-      appBar: AppBar(
-        title: const Text('BẢN ĐỒ'),
-      ),
-      body: Column(
-        children: [
-          Container(
-            color: AppColors.primary,
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: List.generate(_floors.length, (index) {
-                  final isSelected = _selectedFloorIndex == index;
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      label: Text(
-                        _floors[index].name,
-                        style: TextStyle(
-                          color:
-                              isSelected ? AppColors.primaryDark : Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      selected: isSelected,
-                      selectedColor: AppColors.gold,
-                      backgroundColor: Colors.white24,
-                      onSelected: (selected) {
-                        if (selected) {
-                          setState(() => _selectedFloorIndex = index);
-                        }
-                      },
-                    ),
-                  );
-                }),
+    return DefaultTabController(
+      length: _floors.length,
+      child: Scaffold(
+        backgroundColor: AppColors.surface,
+        appBar: AppBar(
+          title: const Text('BẢN ĐỒ'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.language_rounded),
+              onPressed: () => LanguagePickerWidget.show(context),
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            Container(
+              color: AppColors.primary,
+              child: TabBar(
+                indicatorColor: AppColors.gold,
+                indicatorWeight: 3,
+                labelColor: AppColors.gold,
+                unselectedLabelColor: Colors.white60,
+                labelStyle: const TextStyle(fontWeight: FontWeight.bold),
+                tabs: _floors.map((f) => Tab(text: f.name)).toList(),
               ),
             ),
-          ),
-          Expanded(
-            child: InteractiveViewer(
-              minScale: 0.5,
-              maxScale: 4.0,
-              boundaryMargin: const EdgeInsets.all(100),
-              child: Stack(
-                children: [
-                  Center(
-                    child: Container(
-                      width: 300,
-                      height: 400,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.divider, width: 2),
-                        color: Colors.white,
-                      ),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Center(
-                            child: Text(
-                              'Bản đồ khu vực\n${currentFloor.name}',
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                color: AppColors.divider,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+            Expanded(
+              child: TabBarView(
+                physics:
+                    const NeverScrollableScrollPhysics(), // Ngăn vuốt để không xung đột chảo/zoom của InteractiveViewer
+                children: _floors.map((currentFloor) {
+                  return InteractiveViewer(
+                    minScale: 0.5,
+                    maxScale: 4.0,
+                    boundaryMargin: const EdgeInsets.all(100),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: 300,
+                            height: 400,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: AppColors.divider, width: 2),
+                              color: Colors.white,
+                            ),
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                Center(
+                                  child: Text(
+                                    'Bản đồ khu vực\n${currentFloor.name}',
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      color: AppColors.divider,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                ...currentFloor.exhibits.map((exhibit) {
+                                  return _MapMarker(
+                                    exhibit: exhibit,
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        AppRouter.detail,
+                                        arguments: exhibit,
+                                      );
+                                    },
+                                  );
+                                }),
+                              ],
                             ),
                           ),
-                          ...currentFloor.exhibits.map((exhibit) {
-                            return _MapMarker(
-                              exhibit: exhibit,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  AppRouter.detail,
-                                  arguments: exhibit,
-                                );
-                              },
-                            );
-                          }),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                  );
+                }).toList(),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -147,9 +138,11 @@ class _MapMarker extends StatelessWidget {
           width: 30,
           height: 30,
           decoration: BoxDecoration(
-            color: AppColors.primary,
+            color: exhibit.isRoom ? AppColors.primary : AppColors.gold,
             shape: BoxShape.circle,
-            border: Border.all(color: AppColors.gold, width: 2),
+            border: Border.all(
+                color: exhibit.isRoom ? AppColors.gold : AppColors.primaryDark,
+                width: 2),
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
@@ -161,8 +154,8 @@ class _MapMarker extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             exhibit.pinCode,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: exhibit.isRoom ? Colors.white : AppColors.primaryDark,
               fontSize: 10,
               fontWeight: FontWeight.bold,
             ),
