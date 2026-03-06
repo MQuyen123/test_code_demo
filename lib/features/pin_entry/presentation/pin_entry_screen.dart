@@ -104,26 +104,54 @@ class _PinEntryViewState extends State<_PinEntryView> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  for (var i = 0; i < 3; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 24),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          for (var j = 1; j <= 3; j++)
-                            _KeypadButton(
-                              text: '${i * 3 + j}',
-                              onTap: () => _onKeypadTap('${i * 3 + j}'),
-                            ),
-                        ],
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 24),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _KeypadButton(
+                            text: '1', onTap: () => _onKeypadTap('1')),
+                        _KeypadButton(
+                            text: '2', onTap: () => _onKeypadTap('2')),
+                        _KeypadButton(
+                            text: '3', onTap: () => _onKeypadTap('3')),
+                      ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 24),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _KeypadButton(
+                            text: '4', onTap: () => _onKeypadTap('4')),
+                        _KeypadButton(
+                            text: '5', onTap: () => _onKeypadTap('5')),
+                        _KeypadButton(
+                            text: '6', onTap: () => _onKeypadTap('6')),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 24),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _KeypadButton(
+                            text: '7', onTap: () => _onKeypadTap('7')),
+                        _KeypadButton(
+                            text: '8', onTap: () => _onKeypadTap('8')),
+                        _KeypadButton(
+                            text: '9', onTap: () => _onKeypadTap('9')),
+                      ],
+                    ),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       _KeypadButton(
-                        text: '⌫',
-                        onTap: _onDelete,
+                        text: 'R',
+                        onTap: () => _onKeypadTap('R'),
                         color: AppColors.surface,
                       ),
                       _KeypadButton(
@@ -131,12 +159,34 @@ class _PinEntryViewState extends State<_PinEntryView> {
                         onTap: () => _onKeypadTap('0'),
                       ),
                       _KeypadButton(
-                        text: '→',
-                        onTap: _onLookup,
-                        color: AppColors.gold,
-                        textColor: Colors.white,
+                        text: '⌫',
+                        onTap: _onDelete,
+                        color: AppColors.surface,
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 24),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _pin.length == 2 ? _onLookup : null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.gold,
+                        foregroundColor: AppColors.primaryDark,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        disabledBackgroundColor: Colors.grey.shade300,
+                      ),
+                      child: const Text(
+                        'Tra cứu',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -182,13 +232,11 @@ class _KeypadButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   final Color? color;
-  final Color? textColor;
 
   const _KeypadButton({
     required this.text,
     required this.onTap,
     this.color,
-    this.textColor,
   });
 
   @override
@@ -205,10 +253,10 @@ class _KeypadButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w600,
-            color: textColor ?? AppColors.textPrimary,
+            color: AppColors.textPrimary,
           ),
         ),
       ),

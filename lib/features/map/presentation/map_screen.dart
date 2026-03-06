@@ -46,6 +46,8 @@ class _MapScreenState extends State<MapScreen> {
             Container(
               color: AppColors.primary,
               child: TabBar(
+                isScrollable: true,
+                tabAlignment: TabAlignment.start,
                 indicatorColor: AppColors.gold,
                 indicatorWeight: 3,
                 labelColor: AppColors.gold,
@@ -83,8 +85,8 @@ class _MapScreenState extends State<MapScreen> {
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       color: AppColors.divider,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
                                     ),
                                   ),
                                 ),

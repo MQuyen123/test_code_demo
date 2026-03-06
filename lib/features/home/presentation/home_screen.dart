@@ -50,6 +50,8 @@ class _HomeView extends StatelessWidget {
                   Container(
                     color: AppColors.primary,
                     child: TabBar(
+                      isScrollable: true,
+                      tabAlignment: TabAlignment.start,
                       indicatorColor: AppColors.gold,
                       indicatorWeight: 3,
                       labelColor: AppColors.gold,
