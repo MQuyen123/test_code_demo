@@ -104,9 +104,15 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: [
                         Container(
                           color: AppColors.divider,
-                          child: const Center(
-                            child: Icon(Icons.image_outlined,
-                                color: Colors.black26, size: 64),
+                          child: Center(
+                            child: Container(
+                              color: AppColors.divider,
+                              child: const Image(
+                                image: AssetImage(
+                                    'assets/images/Dinh_doc_lap.webp'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                         Container(

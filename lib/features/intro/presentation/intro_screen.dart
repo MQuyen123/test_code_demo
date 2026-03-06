@@ -167,8 +167,8 @@ class IntroScreen extends StatelessWidget {
                     onPressed: () => Navigator.of(context)
                         .pushReplacementNamed(AppRouter.main),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.gold,
-                      foregroundColor: AppColors.primaryDark,
+                      backgroundColor: AppColors.primaryDark,
+                      foregroundColor: AppColors.goldLight,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16)),

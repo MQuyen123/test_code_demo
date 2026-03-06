@@ -27,12 +27,6 @@ class _SplashScreenState extends State<SplashScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeOutBack),
     );
     _controller.forward();
-
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
-        Navigator.of(context).pushReplacementNamed(AppRouter.intro);
-      }
-    });
   }
 
   @override
@@ -44,128 +38,95 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(gradient: AppColors.bgGradient),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Opacity(
-              opacity: 0.15,
-              child: Image.asset(
-                'assets/images/Dinh_doc_lap.webp',
-                fit: BoxFit.cover,
-              ),
+      backgroundColor: Colors.white,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Hình nền "Dinh Độc Lập" ở nửa dưới màn hình
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: Image.asset(
+              'assets/images/Dinh_doc_lap.webp',
+              fit: BoxFit.cover,
+              alignment: Alignment.bottomCenter,
             ),
-            Positioned(
-              top: -60,
-              right: -60,
-              child: Container(
-                width: 220,
-                height: 220,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.gold.withValues(alpha: 0.07),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: -80,
-              left: -80,
-              child: Container(
-                width: 280,
-                height: 280,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.primaryLight.withValues(alpha: 0.12),
-                ),
-              ),
-            ),
-            Center(
-              child: FadeTransition(
-                opacity: _fade,
-                child: ScaleTransition(
-                  scale: _scale,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
+          ),
+          // Logo text và icon ở nửa trên màn hình
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.1,
+            left: 0,
+            right: 0,
+            child: FadeTransition(
+              opacity: _fade,
+              child: ScaleTransition(
+                scale: _scale,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      // Vòng tròn chứa icon Wifi (Mô phỏng logo)
                       Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
+                        width: 80,
+                        height: 80,
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: const LinearGradient(
-                            colors: [AppColors.gold, AppColors.goldLight],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.gold.withValues(alpha: 0.4),
-                              blurRadius: 24,
-                              spreadRadius: 4,
-                            ),
-                          ],
+                          color: AppColors.primary,
                         ),
                         child: const Icon(
-                          Icons.account_balance_rounded,
-                          color: AppColors.primaryDark,
-                          size: 52,
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 40,
                         ),
                       ),
-                      const SizedBox(height: 28),
-                      const Text(
-                        'GUIDE APP',
-                        style: TextStyle(
-                          color: AppColors.gold,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 4,
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      const Text(
-                        'VIETNAM',
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300,
-                          letterSpacing: 6,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 5),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppColors.gold, width: 0.8),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Text(
-                          'YOUR PASS TO DISCOVERY',
-                          style: TextStyle(
-                            color: AppColors.gold,
-                            fontSize: 9,
-                            letterSpacing: 2,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 60),
-                      const Text(
-                        'Dinh Độc Lập',
-                        style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontSize: 13,
-                          fontStyle: FontStyle.italic,
-                          letterSpacing: 1,
-                        ),
-                      ),
-                      const Text(
-                        'Independence Palace · Ho Chi Minh City',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 10,
-                          letterSpacing: 0.5,
+                      const SizedBox(width: 16),
+                      // Text GUIDE APP
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'GUIDE APP',
+                              style: TextStyle(
+                                color: AppColors.primary,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  'VIETNAM',
+                                  style: TextStyle(
+                                    color: AppColors.primary,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Container(
+                                    padding: const EdgeInsets.only(top: 2),
+                                    child: const Text(
+                                      'YOUR PASS TO DISCOVERY',
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -173,14 +134,37 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
             ),
-            Positioned(
-              bottom: 48,
-              left: 0,
-              right: 0,
-              child: const _LoadingDots(),
+          ),
+          // Nút mũi tên đi tiếp ở dưới khu vực tòa nhà
+          Positioned(
+            bottom: 40,
+            left: 0,
+            right: 0,
+            child: FadeTransition(
+              opacity: _fade,
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(AppRouter.intro);
+                  },
+                  child: Container(
+                    width: 56,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: AppColors.primary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
