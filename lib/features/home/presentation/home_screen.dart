@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/di/service_locator.dart';
 import '../../../core/router/app_router.dart';
 import '../domain/entities/exhibit_entity.dart';
+import '../../intro/presentation/widgets/language_picker_widget.dart';
 import 'cubit/home_cubit.dart';
 import 'cubit/home_state.dart';
 
@@ -33,6 +34,10 @@ class _HomeView extends StatelessWidget {
           onPressed: () => Navigator.pushNamed(context, AppRouter.pinEntry),
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.language_rounded),
+            onPressed: () => LanguagePickerWidget.show(context),
+          ),
           IconButton(
             icon: const Icon(Icons.map_rounded),
             onPressed: () => Navigator.pushNamed(context, AppRouter.map),

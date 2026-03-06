@@ -111,7 +111,7 @@ class _MapScreenState extends State<MapScreen> {
                                 );
                               },
                             );
-                          }).toList(),
+                          }),
                         ],
                       ),
                     ),
