@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../features/splash/presentation/splash_screen.dart';
 import '../../features/intro/presentation/intro_screen.dart';
+import '../../features/home/presentation/home_screen.dart';
 
 class AppRouter {
   static const String splash = '/';
@@ -16,6 +17,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case intro:
         return MaterialPageRoute(builder: (_) => const IntroScreen());
+      case home:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
