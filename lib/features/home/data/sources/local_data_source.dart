@@ -4,12 +4,12 @@ import '../../domain/entities/floor_entity.dart';
 class LocalDataSource {
   static List<FloorEntity> getFloors() {
     return [
-      _floor4,
-      _floor3,
-      _floor2,
-      _floor1,
-      _groundFloor,
       _basement,
+      _groundFloor,
+      _floor1,
+      _floor2,
+      _floor3,
+      _floor4,
     ];
   }
 
