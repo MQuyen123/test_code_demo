@@ -3,6 +3,8 @@ import '../../features/splash/presentation/splash_screen.dart';
 import '../../features/intro/presentation/intro_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/pin_entry/presentation/pin_entry_screen.dart';
+import '../../features/detail/presentation/detail_screen.dart';
+import '../../features/home/domain/entities/exhibit_entity.dart';
 
 class AppRouter {
   static const String splash = '/';
@@ -22,6 +24,17 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case pinEntry:
         return MaterialPageRoute(builder: (_) => const PinEntryScreen());
+      case detail:
+        if (settings.arguments is ExhibitEntity) {
+          final exhibit = settings.arguments as ExhibitEntity;
+          return MaterialPageRoute(
+              builder: (_) => DetailScreen(exhibit: exhibit));
+        }
+        return MaterialPageRoute(
+          builder: (_) => const Scaffold(
+            body: Center(child: Text('Missing exhibit data')),
+          ),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
