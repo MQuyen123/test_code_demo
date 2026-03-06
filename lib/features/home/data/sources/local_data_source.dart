@@ -34,7 +34,7 @@ class LocalDataSource {
   static final FloorEntity _floor4 = FloorEntity(
     floorNumber: 4,
     name: 'Tầng 4',
-    mapImagePath: 'images/map/4th.png',
+    mapImagePath: 'assets/images/map/4th.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f4_17',
@@ -71,7 +71,7 @@ class LocalDataSource {
   static final FloorEntity _floor3 = FloorEntity(
     floorNumber: 3,
     name: 'Tầng 3',
-    mapImagePath: 'images/map/3rd.png',
+    mapImagePath: 'assets/images/map/3rd.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f3_13',
@@ -136,7 +136,7 @@ class LocalDataSource {
   static final FloorEntity _floor2 = FloorEntity(
     floorNumber: 2,
     name: 'Tầng 2',
-    mapImagePath: 'images/map/2nd.png',
+    mapImagePath: 'assets/images/map/2nd.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f2_05',
@@ -256,7 +256,7 @@ class LocalDataSource {
   static final FloorEntity _floor1 = FloorEntity(
     floorNumber: 1,
     name: 'Tầng 1',
-    mapImagePath: 'images/map/1st.png',
+    mapImagePath: 'assets/images/map/1st.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f1_01',
@@ -320,7 +320,7 @@ class LocalDataSource {
   static final FloorEntity _groundFloor = FloorEntity(
     floorNumber: 0,
     name: 'Tầng Trệt',
-    mapImagePath: 'images/map/ground.png',
+    mapImagePath: 'assets/images/map/ground.png',
     exhibits: const [
       ExhibitEntity(
         id: 'gf_25',
@@ -427,7 +427,7 @@ class LocalDataSource {
   static final FloorEntity _basement = FloorEntity(
     floorNumber: -1,
     name: 'Tầng Hầm',
-    mapImagePath: 'images/map/bunker.png',
+    mapImagePath: 'assets/images/map/bunker.png',
     exhibits: const [
       ExhibitEntity(
         id: 'b_19',

@@ -23,6 +23,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/map/
     - assets/maps/
     - assets/audio/
     - assets/images/exhibit/
