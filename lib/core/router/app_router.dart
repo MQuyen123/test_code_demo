@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../features/splash/presentation/splash_screen.dart';
+import '../../features/intro/presentation/intro_screen.dart';
 
 class AppRouter {
   static const String splash = '/';
@@ -10,7 +12,10 @@ class AppRouter {
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      // Sẽ thêm routes thật khi implement từng feature
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case intro:
+        return MaterialPageRoute(builder: (_) => const IntroScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
