@@ -4,6 +4,7 @@ import '../../features/intro/presentation/intro_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/pin_entry/presentation/pin_entry_screen.dart';
 import '../../features/detail/presentation/detail_screen.dart';
+import '../../features/map/presentation/map_screen.dart';
 import '../../features/home/domain/entities/exhibit_entity.dart';
 
 class AppRouter {
@@ -24,6 +25,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case pinEntry:
         return MaterialPageRoute(builder: (_) => const PinEntryScreen());
+      case map:
+        return MaterialPageRoute(builder: (_) => const MapScreen());
       case detail:
         if (settings.arguments is ExhibitEntity) {
           final exhibit = settings.arguments as ExhibitEntity;
