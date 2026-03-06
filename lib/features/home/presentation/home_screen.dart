@@ -28,7 +28,7 @@ class _HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.surface,
       appBar: AppBar(
-        title: const Text('DANH SÁCH PHÒNG'),
+        title: const Text('DANH SÁCH'),
         actions: [
           IconButton(
             icon: const Icon(Icons.language_rounded),
@@ -62,15 +62,17 @@ class _HomeView extends StatelessWidget {
                   ),
                   Expanded(
                     child: TabBarView(
+                      physics: const BouncingScrollPhysics(),
                       children: floors.map((floor) {
                         return GridView.builder(
+                          physics: const AlwaysScrollableScrollPhysics(),
                           padding: const EdgeInsets.all(16),
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             mainAxisSpacing: 16,
                             crossAxisSpacing: 16,
-                            childAspectRatio: 0.85,
+                            childAspectRatio: 0.78,
                           ),
                           itemCount: floor.exhibits.length,
                           itemBuilder: (context, index) {
@@ -122,15 +124,15 @@ class _ExhibitCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 3,
+              flex: 13,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
                   Container(
                     color: AppColors.divider,
-                    child: const Center(
-                      child: Icon(Icons.image_outlined,
-                          color: Colors.black26, size: 32),
+                    child: const Image(
+                      image: AssetImage('assets/images/Dinh_doc_lap.webp'),
+                      fit: BoxFit.cover,
                     ),
                   ),
                   Positioned(
@@ -152,7 +154,7 @@ class _ExhibitCard extends StatelessWidget {
                               ? AppColors.textLight
                               : AppColors.primaryDark,
                           fontWeight: FontWeight.bold,
-                          fontSize: 12,
+                          fontSize: 11,
                         ),
                       ),
                     ),
@@ -160,17 +162,18 @@ class _ExhibitCard extends StatelessWidget {
                 ],
               ),
             ),
+            // Phần thông tin chiếm 35% chiều cao card
             Expanded(
-              flex: 2,
+              flex: 7,
               child: Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       exhibit.name,
                       style: const TextStyle(
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
                         height: 1.2,
@@ -182,13 +185,18 @@ class _ExhibitCard extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(Icons.headphones_rounded,
-                            size: 14, color: AppColors.gold),
+                            size: 13, color: AppColors.gold),
                         const SizedBox(width: 4),
-                        Text(
-                          'Audio guide',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.grey.shade600,
+                        Expanded(
+                          child: Text(
+                            'Audio guide',
+                            style: TextStyle(
+                              fontSize: 9,
+                              color: Colors.grey.shade600,
+                              letterSpacing: 0.2,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],

@@ -34,6 +34,7 @@ class LocalDataSource {
   static final FloorEntity _floor4 = FloorEntity(
     floorNumber: 4,
     name: 'Tầng 4',
+    mapImagePath: 'images/map/4th.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f4_17',
@@ -46,6 +47,8 @@ class LocalDataSource {
         markerY: 0.50,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f4_18',
@@ -58,6 +61,8 @@ class LocalDataSource {
         markerY: 0.30,
         category: 'artifact',
         isRoom: false,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );
@@ -66,6 +71,7 @@ class LocalDataSource {
   static final FloorEntity _floor3 = FloorEntity(
     floorNumber: 3,
     name: 'Tầng 3',
+    mapImagePath: 'images/map/3rd.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f3_13',
@@ -78,6 +84,8 @@ class LocalDataSource {
         markerY: 0.85,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f3_14',
@@ -90,6 +98,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f3_15',
@@ -102,6 +112,8 @@ class LocalDataSource {
         markerY: 0.50,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f3_16',
@@ -114,6 +126,8 @@ class LocalDataSource {
         markerY: 0.30,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );
@@ -122,6 +136,7 @@ class LocalDataSource {
   static final FloorEntity _floor2 = FloorEntity(
     floorNumber: 2,
     name: 'Tầng 2',
+    mapImagePath: 'images/map/2nd.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f2_05',
@@ -134,6 +149,8 @@ class LocalDataSource {
         markerY: 0.80,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_06',
@@ -146,6 +163,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_07',
@@ -158,6 +177,8 @@ class LocalDataSource {
         markerY: 0.70,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_08',
@@ -170,6 +191,8 @@ class LocalDataSource {
         markerY: 0.50,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_09',
@@ -182,6 +205,8 @@ class LocalDataSource {
         markerY: 0.70,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_10',
@@ -193,6 +218,8 @@ class LocalDataSource {
         markerY: 0.35,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_11',
@@ -205,6 +232,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f2_12',
@@ -217,6 +246,8 @@ class LocalDataSource {
         markerY: 0.50,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );
@@ -225,6 +256,7 @@ class LocalDataSource {
   static final FloorEntity _floor1 = FloorEntity(
     floorNumber: 1,
     name: 'Tầng 1',
+    mapImagePath: 'images/map/1st.png',
     exhibits: const [
       ExhibitEntity(
         id: 'f1_01',
@@ -237,6 +269,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f1_02',
@@ -249,6 +283,8 @@ class LocalDataSource {
         markerY: 0.70,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f1_03',
@@ -260,6 +296,8 @@ class LocalDataSource {
         markerY: 0.55,
         category: 'room',
         isRoom: false,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'f1_04',
@@ -272,6 +310,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );
@@ -280,6 +320,7 @@ class LocalDataSource {
   static final FloorEntity _groundFloor = FloorEntity(
     floorNumber: 0,
     name: 'Tầng Trệt',
+    mapImagePath: 'images/map/ground.png',
     exhibits: const [
       ExhibitEntity(
         id: 'gf_25',
@@ -292,6 +333,8 @@ class LocalDataSource {
         markerY: 0.85,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_26',
@@ -304,6 +347,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'artifact',
         isRoom: false,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_27',
@@ -316,6 +361,8 @@ class LocalDataSource {
         markerY: 0.55,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_28',
@@ -328,6 +375,8 @@ class LocalDataSource {
         markerY: 0.50,
         category: 'artifact',
         isRoom: false,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_29',
@@ -340,6 +389,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_30',
@@ -352,6 +403,8 @@ class LocalDataSource {
         markerY: 0.30,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'gf_31',
@@ -364,6 +417,8 @@ class LocalDataSource {
         markerY: 0.75,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );
@@ -372,6 +427,7 @@ class LocalDataSource {
   static final FloorEntity _basement = FloorEntity(
     floorNumber: -1,
     name: 'Tầng Hầm',
+    mapImagePath: 'images/map/bunker.png',
     exhibits: const [
       ExhibitEntity(
         id: 'b_19',
@@ -384,6 +440,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'b_20',
@@ -396,6 +454,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'b_21',
@@ -408,6 +468,8 @@ class LocalDataSource {
         markerY: 0.60,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'b_22',
@@ -420,6 +482,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'b_23',
@@ -432,6 +496,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
       ExhibitEntity(
         id: 'b_24',
@@ -444,6 +510,8 @@ class LocalDataSource {
         markerY: 0.40,
         category: 'room',
         isRoom: true,
+        audioUrl: 'chiec_xe_tang_390.mp3',
+        imagePath: 'phong_hoi_truong.webp',
       ),
     ],
   );

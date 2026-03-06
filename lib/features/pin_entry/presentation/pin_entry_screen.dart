@@ -149,11 +149,7 @@ class _PinEntryViewState extends State<_PinEntryView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _KeypadButton(
-                        text: 'R',
-                        onTap: () => _onKeypadTap('R'),
-                        color: AppColors.surface,
-                      ),
+                      const SizedBox(width: 70),
                       _KeypadButton(
                         text: '0',
                         onTap: () => _onKeypadTap('0'),

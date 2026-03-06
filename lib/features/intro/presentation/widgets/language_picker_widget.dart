@@ -63,15 +63,6 @@ class LanguagePickerWidget extends StatelessWidget {
                 .map((lang) => _LangTile(flag: lang.$1, label: lang.$2))
                 .toList(),
           ),
-          const SizedBox(height: 8),
-          Text(
-            '* Tính năng đa ngôn ngữ đang phát triển',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.grey.shade500,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
         ],
       ),
     );

@@ -11,6 +11,7 @@ class ExhibitEntity extends Equatable {
   final String category; // 'room', 'garden', etc.
   final bool isRoom;
   final String? audioUrl; // Đường dẫn file nhạc mp3
+  final String? imagePath;
 
   const ExhibitEntity({
     required this.id,
@@ -23,6 +24,7 @@ class ExhibitEntity extends Equatable {
     required this.category,
     this.isRoom = false,
     this.audioUrl,
+    this.imagePath,
   });
 
   @override
@@ -37,5 +39,6 @@ class ExhibitEntity extends Equatable {
         category,
         isRoom,
         audioUrl,
+        imagePath,
       ];
 }

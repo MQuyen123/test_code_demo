@@ -80,14 +80,11 @@ class _MapScreenState extends State<MapScreen> {
                               fit: StackFit.expand,
                               children: [
                                 Center(
-                                  child: Text(
-                                    'Bản đồ khu vực\n${currentFloor.name}',
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                      color: AppColors.divider,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                                  child: Image.asset(
+                                    currentFloor.mapImagePath,
+                                    fit: BoxFit.contain,
+                                    width: 300,
+                                    height: 400,
                                   ),
                                 ),
                                 ...currentFloor.exhibits.map((exhibit) {
