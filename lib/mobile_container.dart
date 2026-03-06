@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_code/screen/image_detail_sreen.dart';
-import 'screen/home_screen.dart';
-import 'screen/detail_screen.dart';
+import 'core/router/app_router.dart';
 
 class MobileContainer extends StatelessWidget {
   const MobileContainer({super.key});
@@ -14,7 +12,7 @@ class MobileContainer extends StatelessWidget {
       width: isMobile ? double.infinity : 375,
       height: isMobile ? double.infinity : 812,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: isMobile ? BorderRadius.zero : BorderRadius.circular(30),
         boxShadow: isMobile
             ? []
@@ -22,30 +20,14 @@ class MobileContainer extends StatelessWidget {
                 BoxShadow(
                   blurRadius: 20,
                   color: Colors.black26,
+                  offset: Offset(0, 10),
                 )
               ],
       ),
       clipBehavior: Clip.hardEdge,
       child: Navigator(
-        initialRoute: '/',
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case '/':
-              return MaterialPageRoute(
-                builder: (_) => const HomeScreen(),
-              );
-            case '/detail':
-              return MaterialPageRoute(
-                builder: (_) => DetailScreen(),
-              );
-            case '/image':
-              return MaterialPageRoute(
-                builder: (_) => const ImageDetailSreen(),
-              );
-            default:
-              return null;
-          }
-        },
+        initialRoute: AppRouter.splash,
+        onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
   }
