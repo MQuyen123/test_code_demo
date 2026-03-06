@@ -61,33 +61,46 @@ class IntroScreen extends StatelessWidget {
                 flex: 3,
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
+                  clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: AppColors.primaryLight.withValues(alpha: 0.3),
                     border: Border.all(
                         color: AppColors.gold.withValues(alpha: 0.3), width: 1),
                   ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Stack(
+                    fit: StackFit.expand,
                     children: [
-                      Icon(Icons.account_balance_rounded,
-                          color: AppColors.gold, size: 64),
-                      SizedBox(height: 12),
-                      Text(
-                        'Dinh Độc Lập',
-                        style: TextStyle(
-                          color: AppColors.textLight,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      Image.asset(
+                        'assets/images/Dinh_doc_lap.webp',
+                        fit: BoxFit.cover,
                       ),
-                      Text(
-                        'Independence Palace',
-                        style: TextStyle(
-                          color: Colors.white54,
-                          fontSize: 12,
-                          fontStyle: FontStyle.italic,
-                        ),
+                      Container(
+                        color: Colors.black.withValues(alpha: 0.4),
+                      ),
+                      const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.account_balance_rounded,
+                              color: AppColors.gold, size: 64),
+                          SizedBox(height: 12),
+                          Text(
+                            'Dinh Độc Lập',
+                            style: TextStyle(
+                              color: AppColors.textLight,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            'Independence Palace',
+                            style: TextStyle(
+                              color: Colors.white54,
+                              fontSize: 12,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

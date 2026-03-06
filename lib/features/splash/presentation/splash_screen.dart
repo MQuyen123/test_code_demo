@@ -47,7 +47,15 @@ class _SplashScreenState extends State<SplashScreen>
       body: Container(
         decoration: const BoxDecoration(gradient: AppColors.bgGradient),
         child: Stack(
+          fit: StackFit.expand,
           children: [
+            Opacity(
+              opacity: 0.15,
+              child: Image.asset(
+                'assets/images/Dinh_doc_lap.webp',
+                fit: BoxFit.cover,
+              ),
+            ),
             Positioned(
               top: -60,
               right: -60,
