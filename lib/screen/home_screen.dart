@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
+      appBar: AppBar(title: const Text("Home")),
       backgroundColor: Colors.green,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          GestureDetector(
+            GestureDetector(
               onTap: () {
                 Navigator.of(context).pushNamed('/image');
               },
@@ -25,12 +27,11 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed('/detail');
               },
-              child: Text("Go to Detail"),
+              child: const Text("Go to Detail"),
             ),
-            
           ],
         ),
       ),
     );
   }
-}   
+}

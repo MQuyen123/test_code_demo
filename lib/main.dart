@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test_code/responsive_layout.dart';
-import 'mobile_container.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

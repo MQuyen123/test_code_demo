@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
+  const DetailScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Detail")),
+      appBar: AppBar(title: const Text("Detail")),
       backgroundColor: Colors.orange,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text("Back"),
+          child: const Text("Back"),
         ),
       ),
     );

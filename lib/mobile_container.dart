@@ -4,11 +4,11 @@ import 'screen/home_screen.dart';
 import 'screen/detail_screen.dart';
 
 class MobileContainer extends StatelessWidget {
+  const MobileContainer({super.key});
+
   @override
   Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
-    final double width = mediaQuery.size.width;
-    final double height = mediaQuery.size.height;
+    final double width = MediaQuery.of(context).size.width;
     final isMobile = width < 600;
     return Container(
       width: isMobile ? double.infinity : 375,
@@ -16,12 +16,14 @@ class MobileContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: isMobile ? BorderRadius.zero : BorderRadius.circular(30),
-        boxShadow: isMobile ? [] : [
-          BoxShadow(
-            blurRadius: 20,
-            color: Colors.black26,
-          )
-        ],
+        boxShadow: isMobile
+            ? []
+            : const [
+                BoxShadow(
+                  blurRadius: 20,
+                  color: Colors.black26,
+                )
+              ],
       ),
       clipBehavior: Clip.hardEdge,
       child: Navigator(
@@ -30,7 +32,7 @@ class MobileContainer extends StatelessWidget {
           switch (settings.name) {
             case '/':
               return MaterialPageRoute(
-                builder: (_) => HomeScreen(),
+                builder: (_) => const HomeScreen(),
               );
             case '/detail':
               return MaterialPageRoute(
@@ -38,7 +40,7 @@ class MobileContainer extends StatelessWidget {
               );
             case '/image':
               return MaterialPageRoute(
-                builder: (_) => ImageDetailSreen(),
+                builder: (_) => const ImageDetailSreen(),
               );
             default:
               return null;
